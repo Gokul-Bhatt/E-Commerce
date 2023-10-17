@@ -38,5 +38,5 @@ const Footer = () => {
     </div>
   )
 }
-// i am just checking the code 
+
 export default Footer
