@@ -23,7 +23,7 @@ const ShopCategory = (props) => {
       <div className="shopcategory-products">
         {all_product.map((item,i)=>{
            if(props.category === item.category){
-            // if condition is not working some problem in props.category === item.category
+            // if condition is not working some problem in       => if(props.category === item.category)
             return <Item 
             key={i}
             id={item.id}
