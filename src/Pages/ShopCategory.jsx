@@ -1,9 +1,10 @@
+ // if condition is not working some problem in props.category === item.category
+
 import React, { useContext } from 'react'
 import './CSS/ShopCategory.css'
 import { ShopContext } from '../Context/ShopContext';
 import dropdown_icon from '../Components/Assets/dropdown_icon.png'
 import Item from '../Components/Items/Item';
-
 
 
 
@@ -22,8 +23,7 @@ const ShopCategory = (props) => {
       </div>
       <div className="shopcategory-products">
         {all_product.map((item,i)=>{
-           if(props.category === item.category){
-            // if condition is not working some problem in props.category === item.category
+           if (props.category===item.category){
             return <Item 
             key={i}
             id={item.id}
