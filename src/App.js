@@ -9,7 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import men_banner from './Components/Assets/banner_mens.png';
 import women_banner from './Components/Assets/banner_women.png';
 import kid_banner from './Components/Assets/banner_kids.png';
-import LoginSignup from "./Pages/LoginSignup";
+import LoginSignup from './Pages/LoginSignup';
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
              <Route path=":productId" element={<Product/>}/>
          </Route>
          <Route path="/cart" element={<Cart/>}/>
-         <Route path="/login" element={<LoginSignup/>}/>
+         <Route path="/LoginSignup" element={<LoginSignup/>}/>
        </Routes>
        <Footer/>
       </BrowserRouter>
