@@ -16,7 +16,7 @@ const ProductDisplay = (props) => {
                 <img src={product.image} alt="" />
             </div>
             <div className="productdisplay-img">
-                <img className='productdisplay-img' src={product.image} alt="" />
+                <img className='productdisplay-main-img' src={product.image} alt="" />
             </div>
       </div>
       <div className="productdisplay-right">
@@ -36,7 +36,7 @@ const ProductDisplay = (props) => {
             <div className="productdisplay-right-description">
             Premium Quality Fabric: Our shirt is made from a high-quality, breathable cotton blend, ensuring comfort throughout the day. The fabric is soft against the skin and provides an excellent fit.
             </div>
-            <div className="productdisplay-right-size">
+            <div className="productdisplay-right-sizes">
                 <h1>Select Size</h1>
                 <div className="productdisplay-right-size">
                     <div>S</div>
