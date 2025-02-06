@@ -1,3 +1,5 @@
+const User = require("../models/user_model")
+
 const home = async(req,res)=>{
     try {
         res.status(200).send("using the controolers...")
