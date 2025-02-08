@@ -1,3 +1,4 @@
+const express = require("express");
 const User = require("../models/user_model")
 
 const home = async(req,res)=>{
@@ -6,10 +7,11 @@ const home = async(req,res)=>{
     } catch (error) {
         console.log(error)
     }
-}
+};
 
 const register = async(req, res)=>{
     try {
+        console.log("this is register")
         console.log(req.body)
         const { username, email, phone , password } = req.body;
         const userexist = await User.findOne({email});
