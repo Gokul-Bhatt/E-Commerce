@@ -11,17 +11,17 @@ const home = async(req,res)=>{
 
 const register = async(req, res)=>{
     try {
-        console.log("this is register")
+        // console.log("this is register")
         console.log(req.body)
         const { username, email, phone , password } = req.body;
         const userexist = await User.findOne({email});
         if(userexist){
-            res.status(400).send({msg: "email already exist"})
+            res.status(400).json({msg: "email already exist"})
         }
         const userCreated = await User.create({username, email, phone, password})
-        res.status(201).json({msg: "registraton successful",token: await userCreated.generateToken(),userId: userCreated._id.toString(),});
+        res.status(201).json({msg: userCreated,token: await userCreated.generateToken(),userId: userCreated._id.toString(),});
     } catch (error) {
-        res.status(500).json("internal server error")
+        res.status(500).send("error")
     }
 };
 
