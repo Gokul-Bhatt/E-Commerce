@@ -19,8 +19,7 @@ const register = async(req, res)=>{
             process.exit(0)
         }
         const userCreated = await User.create({username, email, phone, password})
-        // res.status(201).json({msg: userCreated,token: await userCreated.generateToken(),userId: userCreated._id.toString(),});
-        res.status(201).json({msg:userCreated})
+        res.status(201).json({msg: userCreated,token: await userCreated.generateToken(),userId: userCreated._id.toString(),});
     } catch(error) {
         res.status(500).json("error")
     }
