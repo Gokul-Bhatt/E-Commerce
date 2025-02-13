@@ -1,5 +1,7 @@
 const express = require("express");
-const User = require("../models/user_model")
+const User = require("../models/user_model");
+const Cuser = require("../models/contact_model")
+
 
 const home = async(req,res)=>{
     try {
@@ -25,4 +27,14 @@ const register = async(req, res)=>{
     }
 };
 
-module.exports = {home,register};
+const contact = async(req, res)=>{
+    try {
+        const {username,email, message } = req.body;
+        const userCreated = await Cuser.create({username, email, message});
+        res.status(200).send({msg: userCreated, token: await userCreated.generateToken(), userId: userCreated._id.toString(),})
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+module.exports = {home,register,contact};

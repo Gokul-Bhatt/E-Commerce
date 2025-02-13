@@ -4,7 +4,7 @@ const app = express();
 const authroute = require("./router/auth_router")
 const connectDb = require("./Utils/db")
 
-// app.use(express.json());
+app.use(express.json());
 app.use("/home",authroute);
 app.use("/home/register",authroute);
 
